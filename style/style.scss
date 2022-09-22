@@ -1,0 +1,311 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --bg:black;
+    --font:white;
+    --title:#dd0a0d;
+}
+.light{
+    --bg:#F7F7F7;
+    --font:black;
+    --title:#dd0a0d;
+}
+body{
+    font-family: Roboto;
+    background-color: var(--bg) ;
+    transition: all .5s;
+
+}
+.bullets{
+    width: 100%;
+    position: fixed;
+    bottom: 50px;
+    transform: translateX(-50%);
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    button{
+        border-radius: 50%;
+        background-color: var(--bg);
+        padding: 5px 10px;
+        font-size: 20px;
+        margin: 5px;
+        border: none;
+        color: var(--font);
+    }
+    button:hover{
+        background-color: var(--title);
+    }
+    .active{
+        background-color: var(--title);
+    }
+}
+section{
+    width: 100%;
+    padding-bottom: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    display: none;
+}
+.home{
+    padding: 50px 0px 150px;
+    min-height: 100vh;
+    align-items: center;
+    display: flex;
+    .text{
+        h1{
+            color: var(--font);
+            font-size: 50px;
+            font-weight: 700;
+            span{
+                color: var(--title);
+            }
+        }p{
+            color: var(--font);
+            margin-top: 20px;
+        }
+        button{
+            color: var(--bg);
+            padding: 10px;
+            background-color: var(--font);
+            border-radius: 10px;
+            border: none;
+        }
+        button:hover{
+            background-color: var(--title);
+            color: #F7F7F7;
+            transition: .5s;
+        }
+    }
+}
+.about{
+    padding: 50px 0px 150px;
+    min-height: 100vh;
+    // display: flex;
+    .text{
+        h1{
+            color: var(--font);
+            font-size: 50px;
+            font-weight: 700;
+            span{
+                color: var(--title);
+            }
+        }p{
+            color: var(--font);
+            margin-top: 20px;
+        }
+        button{
+            color: var(--bg);
+            padding: 10px;
+            background-color: var(--font);
+            border-radius: 10px;
+            border: none;
+            margin-bottom: 20px;
+        }
+        button:hover{
+            background-color: var(--title);
+            color: #F7F7F7;
+            transition: .5s;
+        }
+    }
+    img{
+        border-radius: 10px;
+    }
+}
+.service{
+    padding: 50px 0px 150px;
+    min-height: 100vh;
+   .serviceBox{
+    position: relative;
+    background-color:#ff0000;
+    margin:30px 10px;
+    padding: 20px;
+    border-radius: 20px;
+    p{
+        color: var(--font);
+        margin-top: 20px;
+        font-size: 20px;
+        padding: 20px;
+    }
+    button{
+        color: var(--font);
+        padding: 10px;
+        background-color: var(--bg);
+        border-radius: 10px;
+        border: none;
+        margin-left: 20px;
+    }
+    button:hover{
+        background-color: var(--font);
+        color: var(--title);
+        transition: .5s;
+    }
+   }
+   .serviceBox::after{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top:0;
+        left: 0;
+        content: attr(data-service);
+        background-color: var(--font);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--bg);
+        font-size: 30px;
+        text-align: center;
+        border-radius: 20px;
+   }
+   .serviceBox:hover::after{
+    height: 0;
+    content: "";
+    transition: .5s;
+   } 
+   .accordion{
+    .accordion-button{
+       background-color: #dd0a0d
+    }
+   }
+   .card{
+    background-color: var(--title);
+    img{
+        height: 200px;
+    }
+    // h5{
+    //     color: var(--font);
+    // }
+    // p{
+    //     color: var(--font);
+    // }
+}
+}
+.transformation{
+    padding: 50px 0px 150px;
+    min-height: 100vh;
+    // display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    h1{
+        color: var(--title);
+        margin-bottom: 20px;
+    }
+    .swiper{
+       border-radius: 20px;
+        width: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .swiper-wrapper{
+        display: flex;
+        /* justify-content: center;
+        align-items: center; */
+        width: 100%;
+    }
+    .swiper-wrapper img{
+        width: 100%;
+        height: 800px;
+    }
+    @media (max-width:799px) {
+       .swiper{
+        width: 100%;
+       } 
+    }
+    @media (max-width:400px){
+        .swiper{
+            // height: 400px;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    button{
+        color: var(--font);
+        padding: 10px;
+        background-color: var(--title);
+        border-radius: 10px;
+        border: none;
+        margin-top: 50px;
+    }
+    button:hover{
+        background-color: var(--font);
+        color: var(--title);
+        transition: .5s;
+    }
+}
+.blogs{
+    padding: 50px 0px ;
+    .blog{
+        a{
+            text-decoration: none;
+            color: var(--title);
+            img{
+                height: 200px;
+                border-radius: 10px;
+            }
+        }
+    }
+}
+.contact{
+    padding: 100px 0px;
+    // display: flex;
+    justify-content: center;
+    align-items: center;
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        input, textarea, button{
+            width: 80%;
+            border: none;
+            outline: none;
+            padding-left: 20px;
+            background-color: #ff000077;
+            color: var(--font);
+        }
+        ::placeholder{
+            color: var(--font);
+        }
+        input, button{
+            height: 40px;
+            margin-bottom: 10px;
+        }
+        textarea{
+            padding-top: 20px;
+        }
+    }
+    .social{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        a{
+            width: 100%;
+            margin-bottom: 10px;
+            color: white;
+        }
+        .face{
+            background-color: #1876F1;
+        }
+        .whats{
+            background-color: #3EC551;
+        }
+        .insta{
+            background-color: #C62185;
+        }
+        .pint{
+            background-color: #E60023;
+        }
+    }
+}
